@@ -8,14 +8,15 @@ package com.firstSpring.demo.mail;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
 /**
  *
  * @author danielramirez
  */
 
+
 public class SmtpMailSender implements MailSender {
+    
+private JavaMailSender javaMailSender; 
 
     private static Log Log = LogFactory.getLog(SmtpMailSender.class);
 

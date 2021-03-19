@@ -7,6 +7,7 @@ package com.firstSpring.demo.controllers;
 
 import com.firstSpring.demo.mail.MailSender;
 import com.firstSpring.demo.mail.MockMailSender;
+import javax.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,9 +32,9 @@ public class MailController {
     
     
      @RequestMapping("/mail")
-    public String mail(){
+    public String mail() throws MessagingException {
         
-        mailSender.send("mail@example.com","test mail", "test body");
+        mailSender.send("drami123@fiu.edu","test mail", "test body");
         
         return "Mail Sent!";
     }

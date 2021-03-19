@@ -8,7 +8,7 @@ package com.firstSpring.demo.mail;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+import org.springframework.mail.javamail.JavaMailSender;
 
 /**
  *
@@ -26,7 +26,7 @@ public class MailConfig {
     
     @Bean
     @ConditionalOnProperty("spring.mail.host")
-     public MailSender smtpMailSender(){
-        return new SmtpMailSender();
+     public MailSender smtpMailSender(JavaMailSender javaMailSender){
+        return new SmtpMailSender(javaMailSender);
     }
 }

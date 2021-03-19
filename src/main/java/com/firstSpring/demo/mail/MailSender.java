@@ -5,12 +5,14 @@
  */
 package com.firstSpring.demo.mail;
 
+import javax.mail.MessagingException;
+
 /**
  *
  * @author danielramirez
  */
 public interface MailSender {
     
-    void send(String to, String subject, String body);
+    void send(String to, String subject, String body) throws MessagingException;
     
 }
